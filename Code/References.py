@@ -34,6 +34,10 @@ print(hw, hw2)
 # getting length of a string, or other container object
 print(string1, len(string1))
 
+# conversions into string from other types
+print(804, str(804), type(804), type(str(804)))
+print(80.4, str(80.4), type(80.4), type(str(80.4)))
+
 # splitting a string based off of some character / delimiter; gets rid of the splitting parameter
 sentence = "The quick, brown fox jumped over the, lazy, dog."
 print(sentence.split(' '))
@@ -48,3 +52,34 @@ print(string1.rjust(7))      # Right-justify a string, padding with spaces; prin
 print(string1.center(7))     # Center a string, padding with spaces; prints " hello "
 print(string1.replace('l', '(ell)'))  # Replace all instances of one substring with another; prints "he(ell)(ell)o"
 print('  world '.strip())  # Strip leading and trailing whitespace; prints "world"
+
+
+#  Containers
+print("\nUsing Containers:")
+# lists in python are mutable arrays : https://docs.python.org/3.5/tutorial/datastructures.html#more-on-lists
+list1 = [1, 2, 3]
+print(list1, list1[0], list1[-1])  # negative indices count back from the end, where list[length-1] = list[-1]
+list1[1] = "woah"   # not hard-typed
+print(list1)
+list1.append(("can", 'contain', "tuples!"))
+list1.insert(1, 2)   # can insert at different locations in the list
+print(list1)
+first = list1.pop(0)   # pop from a certain index
+print(first, list1)
+list1.remove(2)   # or remove a certain item from the list
+print(list1)
+
+# slicing
+nums = list(range(0, 5, 1))
+print(nums)
+print(nums[1:3])  # choose start and end points for a sublist (slice of list)
+print(nums[2:])  # can go from index to end
+print(nums[:2])  # can go from start to index
+print(nums[:-2])  # indexes can be negative
+print(nums[:])  # yeah, this is whatever
+nums[2:4] = [8, 9]  # can replace a slice with another list
+print(nums)
+nums[2:4] = [7]  # sizes don't have to match, but you won't replace the entire sublist
+print(nums)
+nums[2:3] = [9, 8, 6]  # but you can make the list bigger by replacing a smaller slice
+print(nums)
