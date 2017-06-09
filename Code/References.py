@@ -1,14 +1,7 @@
 """Basic builtins, syntax, functions to keep in mind, etc."""
 
-#  type( var )  returns the type, since it's dynamic, this can be used for polymorphism
-print("\nUsing type():")
-x = 8
-y = 8.0
-print(type(x), type(y), type([x, y]), type((x, y)), type({x, y}))
-
-
 #  Operators:  exponentiation, logical and, logical or, logical not, logical XOR
-print("\nUsing operators:")
+print("\n\nUsing operators:")
 t = True
 f = False
 print(2 ** 5, 3 ** 2)
@@ -19,7 +12,7 @@ print(t != t, t != f, f != t, f != f)
 
 
 #  Strings, full reference : https://docs.python.org/3.5/library/stdtypes.html#string-methods
-print("\nUsing strings:")
+print("\n\nUsing strings:")
 # definition, either is acceptable
 string1 = "hello"
 string2 = 'world'
@@ -54,8 +47,19 @@ print(string1.replace('l', '(ell)'))  # Replace all instances of one substring w
 print('  world '.strip())  # Strip leading and trailing whitespace; prints "world"
 
 
+#  type( var )  returns the type, since it's dynamic, this can be used for polymorphism
+print("\n\nUsing type():")
+x = 8
+y = 8.0
+print("x = 8 is of type: ", type(x))
+print("y = 8.0 is of type: ", type(y))
+print("[x, y] = [8, 8.0] is of type: ", type([x, y]))
+print("(x, y) = (8, 8.0) is of type: ", type((x, y)))
+print("{x, y} = {8, 8.0} is of type: ",type({x, y}))
+
+
 #  Containers
-print("\nUsing Containers:")
+print("\n\nUsing Containers:")
 # lists in python are mutable arrays : https://docs.python.org/3.5/tutorial/datastructures.html#more-on-lists
 list1 = [1, 2, 3]
 print(list1, list1[0], list1[-1])  # negative indices count back from the end, where list[length-1] = list[-1]
@@ -83,3 +87,26 @@ nums[2:4] = [7]  # sizes don't have to match, but you won't replace the entire s
 print(nums)
 nums[2:3] = [9, 8, 6]  # but you can make the list bigger by replacing a smaller slice
 print(nums)
+
+# list looping, effectively for-each loops
+my_list = ['a', 'b', 'c', 'd', 'e', 'f']
+for letter in my_list:
+    print(letter, letter.capitalize())
+my_list = ['birdue', 'doggo', 'puppor', 'meowser']
+for index, animal in enumerate(my_list):
+    print ("animal #%d is: %s" % (index, animal))
+
+# list comprehensions
+nums = [0, 1, 2, 3, 4]
+squares = []
+for x in nums:
+    squares.append(x ** 2)
+print(squares)
+# equivalent to:
+nums = [0, 1, 2, 3, 4]
+squares = [x ** 2 for x in nums]
+print(squares)
+# can also contain conditionals
+nums = [0, 1, 2, 3, 4]
+even_squares = [x ** 2 for x in nums if x % 2 == 0]
+print(even_squares)
