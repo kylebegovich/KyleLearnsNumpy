@@ -1,4 +1,6 @@
 """Basic builtins, syntax, functions to keep in mind, etc."""
+import math
+
 
 #  Operators:  exponentiation, logical and, logical or, logical not, logical XOR
 print("\n\nUsing operators:")
@@ -59,7 +61,7 @@ print("{x, y} = {8, 8.0} is of type: ",type({x, y}))
 
 
 #  Containers
-print("\n\nUsing Containers:")
+print("\n\nUsing Containers:\nLists:")
 # lists in python are mutable arrays : https://docs.python.org/3.5/tutorial/datastructures.html#more-on-lists
 list1 = [1, 2, 3]
 print(list1, list1[0], list1[-1])  # negative indices count back from the end, where list[length-1] = list[-1]
@@ -110,3 +112,55 @@ print(squares)
 nums = [0, 1, 2, 3, 4]
 even_squares = [x ** 2 for x in nums if x % 2 == 0]
 print(even_squares)
+
+# Dictionaries
+print("\nDictionaries:")
+my_dict = {"start": (0, 0), "end": (4, 5)}
+print("start : ", my_dict["start"])  # reference of a value
+my_dict["trap"] = (3, 3)  # assigning a new key/value pair
+print("is the trap in my_dict?", "trap" in my_dict)  # checks for belonging to the container, true
+print("trap : ", my_dict["trap"])
+#  print(my_dict["hole"])  will not evaluate, throws an error
+print("The hole is at:", my_dict.get("hole", (-1, -1)))  # instead, use get() with a default
+print("The trap is at:", my_dict.get("trap", (-1, -1)))
+
+
+# get() is equivalent to the following function:
+def my_get(map, key, default):
+    if key in map:
+        return map[key]
+    else:
+        return default
+
+print("The hole is at:", my_get(my_dict, "hole", (-1, -1)))
+print("The trap is at:", my_get(my_dict, "trap", (-1, -1)))
+
+del my_dict["end"]  # removes the pair from the structure
+print("The end is at:", my_dict.get("end", (-1, -1)))
+#  del my_dict["hole"]  throws an error as well, accessing out of bounds / not in container
+
+# looping dictionaries:
+print("Loops:")
+my_dict = {'horses': 2,'sloths': 3, 'birds': 4, 'people': 5}
+for species in my_dict:
+    toes = my_dict[species]
+    print("%s have %d toes on each foot" % (species, toes))
+
+my_dict = {'cyclops': 1, 'human': 2, 'dragonfly': "too many"}  # can do different types for values
+for creature in my_dict:
+    eyes = my_dict[creature]
+    message = "A %s has %s eye" % (creature, str(eyes))  # can set all values to one type as a work-around
+    if not eyes == 1:
+        print(message + "s")
+    else:
+        print(message)
+
+# dictionary comprehensions
+print("Comps:")
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+even_num_to_two_pow = {x: 2 ** x for x in nums if x % 2 == 0}  # creating a map based of a list comprehension
+print(even_num_to_two_pow)
+
+square_nums_to_their_root = {s: int(math.sqrt(s)) for s in nums if math.sqrt(s) == math.floor(math.sqrt(s))}
+print(square_nums_to_their_root)  # can use imported functions within comprehensions
