@@ -38,7 +38,7 @@ sentence = "The quick, brown fox jumped over the, lazy, dog."
 print(sentence.split(' '))
 print(sentence.split(","))
 print(sentence.split(" ", 5))  # max number of splits specified
-print(sentence.split("brown"))  # can be whole word / phrase doing the split
+print(sentence.split("fox"))  # can be whole word / phrase doing the split
 
 # other fun stuff
 print(string1.capitalize())  # Capitalize a string; prints "Hello"
@@ -126,9 +126,9 @@ print("The trap is at:", my_dict.get("trap", (-1, -1)))
 
 
 # get() is equivalent to the following function:
-def my_get(map, key, default):
-    if key in map:
-        return map[key]
+def my_get(dictionary, key, default):
+    if key in dictionary:
+        return dictionary[key]
     else:
         return default
 
@@ -164,3 +164,90 @@ print(even_num_to_two_pow)
 
 square_nums_to_their_root = {s: int(math.sqrt(s)) for s in nums if math.sqrt(s) == math.floor(math.sqrt(s))}
 print(square_nums_to_their_root)  # can use imported functions within comprehensions
+
+
+# Sets
+print("\nSets:")
+animals = {'cat', 'dog'}
+print('cat' in animals)  # Check if an element is in a set
+print('fish' in animals)
+animals.add('fish')  # Adding an element to a set
+print('fish' in animals)
+print(len(animals))
+animals.add('cat')  # Adding an element that's already belonging to the set is a no-op
+print(len(animals))
+animals.remove('cat')  # Remove element from the set
+print(len(animals))
+
+# Iterating over sets: same as a list, but order is not guaranteed
+animals = {'cat', 'dog', 'fish'}
+for idx, animal in enumerate(animals):
+    print('#%d: %s' % (idx + 1, animal))
+other_animals = {'bird', 'monkey', 'tiger'}
+for idx, animal in enumerate(other_animals):
+    print('#%d: %s' % (idx + 1, animal))
+
+# Set comprehensions are a thing
+nums = {int(math.sqrt(x)) for x in range(30)}  # the sqrt of all numbers 0 - 29, truncated not rounded
+print(nums)
+nums = {math.floor(math.log(x, 2)) for x in range(1, 65)}
+print(nums)
+
+
+# Tuples : immutable little lists
+print("\nTuples:")
+t = (5, 6)        # Create a tuple
+d = {(x, x + 1): x for x in range(7)}  # Create a dictionary with tuple keys
+print(t, type(t))
+print(d)
+print(d[t])
+print(d[(1, 2)])
+t = ("types", 5, "dont", 8.0, 'matter')  # even inside of other containers!
+print(t)
+d = {t: 123, (1, 1, 0): 6, (1, 1): 3}
+print(d)
+
+
+# Functions
+print("\n\nFunctions:")
+
+
+def sign(x):
+    """ with functional comment style too! """
+    if x > 0:
+        return 'positive'
+    elif x < 0:
+        return 'negative'
+    else:
+        return 'zero'
+
+for x in [-1, 0, 1]:
+    print(sign(x))
+
+
+def hello(name, loud=False):
+    """ We can take optional arguments as well, kinda polymorphism? yeah"""
+    if loud:
+        print('HELLO, %s!' % name.upper())
+    else:
+        print('Hello, %s' % name)
+
+hello('Bob')
+hello('Fred', True)
+hello("Kyle", loud=True)
+hello("Cinder", loud=False)
+
+
+def wat(a, b):
+    """ pass in tuples with an extra set of parentheses """
+    if a > b:
+        return True
+    elif a < b:
+        return -17
+    elif a ** b > math.pi:
+        return "Returns are a different beast in Python"
+    else:
+        return
+
+for t in [(1, 0), (0, 1), (3, 3), (0, 0)]:
+    print(wat(t[0], t[1]))
