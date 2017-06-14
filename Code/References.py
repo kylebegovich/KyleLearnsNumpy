@@ -251,3 +251,28 @@ def wat(a, b):
 
 for t in [(1, 0), (0, 1), (3, 3), (0, 0)]:
     print(wat(t[0], t[1]))
+
+
+# Classes
+class Greeter(object):
+
+    # Constructor uses builtin __init__
+    def __init__(self, name):
+        self.name = name  # Create and store an instance variable
+
+    # Instance method
+    def greet(self, loud=False):
+        if loud:
+            print('HELLO, %s!' % self.name.upper())
+        else:
+            print('Hello, %s' % self.name)
+
+    # Class methods
+    @staticmethod
+    def introduce():
+        print("Hello!, my name is Python.")
+
+g = Greeter('Fred')  # Construct an instance of the Greeter class
+g.greet()
+g.greet(True)
+g.introduce()
