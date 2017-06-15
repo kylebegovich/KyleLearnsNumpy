@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fc1f601-73da-42e3-afe7-76eb301ffada" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Code/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Code/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Code/.idea/untitled folder.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Code/.idea/workspace.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Code/References.py" afterPath="$PROJECT_DIR$/Code/References.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="References.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="References.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Code/References.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="277" column="13" lean-forward="false" selection-start-line="277" selection-start-column="13" selection-end-line="277" selection-end-column="13" />
+            <state relative-caret-position="603">
+              <caret line="275" column="9" lean-forward="false" selection-start-line="275" selection-start-column="9" selection-end-line="275" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NumpyTutorial.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Code/NumpyTutorial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,6 +58,7 @@
       <list>
         <option value="$PROJECT_DIR$/Code/PlayingWithStrings.py" />
         <option value="$PROJECT_DIR$/Code/References.py" />
+        <option value="$PROJECT_DIR$/Code/NumpyTutorial.py" />
       </list>
     </option>
   </component>
@@ -70,6 +84,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -98,12 +113,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Code" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
@@ -292,7 +311,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -331,8 +352,16 @@
     <entry file="file://$PROJECT_DIR$/Code/PlayingWithStrings.py" />
     <entry file="file://$PROJECT_DIR$/Code/References.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="277" column="13" lean-forward="false" selection-start-line="277" selection-start-column="13" selection-end-line="277" selection-end-column="13" />
+        <state relative-caret-position="603">
+          <caret line="275" column="9" lean-forward="false" selection-start-line="275" selection-start-column="9" selection-end-line="275" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Code/NumpyTutorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
