@@ -95,22 +95,16 @@ print(a[np.arange(4), b])  # Prints "[ 1  6  7 11]"
 
 # Mutate one element from each row of a using the indices in b
 a[np.arange(4), b] += 10
-
-print(a)  # prints "array([[11,  2,  3],
-          #                [ 4,  5, 16],
-          #                [17,  8,  9],
-          #                [10, 21, 12]])
+print(a)
 
 
 a = np.array([[1, 2], [3, 4], [5, 6]])
-bool_idx = (a > 2)   # Find the elements of a that are bigger than 2;
-                     # this returns a numpy array of Booleans of the same
-                     # shape as a, where each slot of bool_idx tells
-                     # whether that element of a is > 2.
+bool_idx = (a > 2)  # Find the elements of a that are bigger than 2;
+                    # this returns a numpy array of Booleans of the same
+                    # shape as a, where each slot of bool_idx tells
+                    # whether that element of a is > 2.
 
-print(bool_idx)      # Prints "[[False False]
-                     #          [ True  True]
-                     #          [ True  True]]"
+print(bool_idx)
 
 # We use boolean array indexing to construct a rank 1 array
 # consisting of the elements of a corresponding to the True values
@@ -131,3 +125,26 @@ print(x.dtype)             # Prints "float64"
 x = np.array([1, 2], dtype=np.int32)   # Force a particular datatype
 print(x.dtype)
 
+
+# Array maths
+x = np.array([[1,2],[3,4]], dtype=np.float64)
+y = np.array([[5,6],[7,8]], dtype=np.float64)
+
+# Element wise sum
+print(x + y)
+print(np.add(x, y))
+
+# Element wise difference
+print(x - y)
+print(np.subtract(x, y))
+
+# Element wise product
+print(x * y)
+print(np.multiply(x, y))
+
+# Element wise division
+print(x / y)
+print(np.divide(x, y))
+
+# Element wise square root
+print(np.sqrt(x))
