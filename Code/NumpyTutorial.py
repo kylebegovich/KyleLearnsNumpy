@@ -126,7 +126,7 @@ x = np.array([1, 2], dtype=np.int32)   # Force a particular datatype
 print(x.dtype)
 
 
-# Array maths
+# Array Maths
 x = np.array([[1,2],[3,4]], dtype=np.float64)
 y = np.array([[5,6],[7,8]], dtype=np.float64)
 
@@ -148,3 +148,23 @@ print(np.divide(x, y))
 
 # Element wise square root
 print(np.sqrt(x))
+
+# Matrix Maths
+x = np.array([[1, 2], [3, 4]])
+y = np.array([[5, 6], [7, 8]])
+v = np.array([9, 10])
+w = np.array([11, 12])
+
+# Inner product of vectors
+print(v.dot(w))
+print(np.dot(v, w))
+
+# Matrix / vector product; both produce a rank 1 array
+print(x.dot(v))
+print(np.dot(x, v))
+
+# Matrix / matrix product; both produce a rank 2 array
+print(x.dot(y))
+print(np.dot(x, y))
+
+# More Maths functions, full list in Docs: https://docs.scipy.org/doc/numpy/reference/routines.math.html
