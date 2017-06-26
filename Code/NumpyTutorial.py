@@ -168,3 +168,18 @@ print(x.dot(y))
 print(np.dot(x, y))
 
 # More Maths functions, full list in Docs: https://docs.scipy.org/doc/numpy/reference/routines.math.html
+
+x = np.array([[1, 2], [3, 4]])
+
+print(np.sum(x))  # Compute sum of all elements
+print(np.sum(x, axis=0))  # Compute sum of each column
+print(np.sum(x, axis=1))  # Compute sum of each row
+
+x = np.array([[1, 2], [3, 4]])
+print(x)
+print(x.T)
+
+# Note that taking the transpose of a rank 1 array does nothing:
+v = np.array([1, 2, 3])
+print(v)
+print(v.T)
