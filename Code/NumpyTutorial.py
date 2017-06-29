@@ -276,3 +276,10 @@ print(x + np.reshape(w, (2, 1)))
 # [[ 2  4  6]
 #  [ 8 10 12]]
 print(x * 2)
+
+#
+#
+#  The rest of Numpy's documentation here:
+#  https://docs.scipy.org/doc/numpy/reference/
+#
+#
